@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 
 :root {
-    --cor-destaque: #ffffff;
-     --cor-gradiente-preto: linear-gradient(113deg, #c5fc00c0 0%, #2bff00 44.96%, #ffae00 100%);
+    --cor-fundo-escuro: #0a0a0a;
+    --cor-verde-omnitrix: #66cc33;
+    --cor-verde-claro: #99ff66;
+    --cor-texto-claro: #ffffff;
+    --cor-gradiente-omnitrix: linear-gradient(113deg, #103300 0%, #339900 44.96%, #103300 100%);
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: Montserrat;
+    font-family: 'Jura', sans-serif; /* Fonte futurista e geométrica */
 }
 
 body {
@@ -16,11 +20,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 16px 21px 18px 21px;
-    background: var(--cor-gradiente-preto);
+    background: var(--cor-fundo-escuro);
     height: 100vh;
     flex-direction: column;
 }
-
 
 .container {
     display: flex;
@@ -32,11 +35,12 @@ body {
 }
 
 h1 {
-    color: var(--cor-destaque);
+    color: var(--cor-verde-omnitrix);
     text-align: center;
-    font-size: 2.8rem;
-    font-weight: 600;
+    font-size: 3.8rem;
+    font-weight: 700;
     text-transform: uppercase;
+    text-shadow: 0 0 10px var(--cor-verde-omnitrix);
 }
 
 #entrada-de-texto {
@@ -47,12 +51,15 @@ h1 {
     gap: 0.625rem;
     align-self: stretch;
     border-radius: 0.625rem;
-    background: #FFF;
+    background: #000000;
+    color: var(--cor-verde-claro);
     font-size: 2rem;
+    border: 2px solid var(--cor-verde-omnitrix);
+    box-shadow: inset 0 0 10px var(--cor-verde-omnitrix), 0 0 20px rgba(102, 204, 51, 0.4);
 }
 
 #entrada-de-texto::placeholder {
-    color: #828282;
+    color: #4d4d4d;
     font-size: 2rem;
     font-weight: 400;
     line-height: normal;
@@ -60,28 +67,38 @@ h1 {
 
 #botao-palavrachave {
     display: flex;
-    padding: 1.25rem;
+    padding: 1.25rem 2.5rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
     border-radius: 0.5rem;
     border: none;
-    background: var(--cor-destaque);
-    color: #000;
+    background: var(--cor-gradiente-omnitrix);
+    color: var(--cor-texto-claro);
     font-size: 2.5rem;
     font-weight: 500;
     line-height: normal;
+    box-shadow: 0 0 15px var(--cor-verde-omnitrix);
+    transition: all 0.3s ease-in-out;
+}
+
+#botao-palavrachave:hover {
+    box-shadow: 0 0 20px var(--cor-verde-omnitrix), 0 0 30px var(--cor-verde-claro);
+    cursor: pointer;
 }
 
 #resultado-palavrachave {
     display: flex;
     border-radius: 0.625rem;
     align-self: stretch;
-    color: var(--cor-destaque);
+    color: var(--cor-texto-claro);
     font-size: 2.5rem;
     justify-content: center;
     margin-bottom: 2rem;
     max-width: 100%;
     max-height: 50vh;
     overflow: auto;
+    border: 2px solid var(--cor-verde-omnitrix);
+    background: #000000;
+    box-shadow: 0 0 10px var(--cor-verde-omnitrix);
 }
